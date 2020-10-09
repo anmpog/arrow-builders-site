@@ -1,4 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
+// import { Link } from 'gatsby';
+import { Link } from 'react-scroll';
 import Fade from 'react-reveal/Fade';
 import { Container, Row, Col } from 'react-bootstrap';
 import Title from '../Title/Title';
@@ -25,7 +27,7 @@ const About = () => {
   return (
     <section id="about">
       <Container>
-        <Title title="About Me" />
+        <Title title="About Us" />
         <Row className="about-wrapper">
           <Col md={6} sm={12}>
             <Fade bottom duration={1000} delay={600} distance="30px">
@@ -50,14 +52,9 @@ const About = () => {
                 </p>
                 {resume && (
                   <span className="d-flex mt-3">
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="cta-btn cta-btn--resume"
-                      href={resume}
-                    >
-                      Resume
-                    </a>
+                    <Link to="projects" smooth duration={1000}>
+                      Examples of Our Work
+                    </Link>
                   </span>
                 )}
               </div>
