@@ -13,13 +13,14 @@ export const heroData = {
   name: 'Arrow Builders',
   subtitle: 'We are custom builders in Boulder, Colorado.',
   cta: 'See our work',
-  cta2: 'Learn a little about us',
+  cta2: 'Learn a bit about us',
 };
 
 // ABOUT DATA
 export const aboutData = {
   img: 'profile.jpg',
-  paragraphOne: 'We are custom home builders based in Boulder, Colorado. We have over {years}+ years experience in custom, high-end home building. Our experien ced, lightweight team allows us to do high-quality work quickly and without the overhead that bigger outfits bring along with them. We will work closely with you to see your dream build or remodel realized.',
+  paragraphOne:
+    'We are custom home builders based in Boulder, Colorado. We have over {years}+ years experience in custom, high-end home building. Our experien ced, lightweight team allows us to do high-quality work quickly and without the overhead that bigger outfits bring along with them. We will work closely with you to see your dream build or remodel realized.',
   paragraphTwo: '{more copy re: experience}',
   paragraphThree: '{more copy re: values}',
   resume: 'https://www.resumemaker.online/es.php', // if no resume, the button will not show up
@@ -94,7 +95,8 @@ export const projectsData = [
 
 // CONTACT DATA
 export const contactData = {
-  cta: 'If you would like to work together, call us at (555)555-5555, or click the button below to send us an email. We will respond to your inquiry within 48 hours!',
+  cta:
+    'If you would like to work together, call us at (555)555-5555, or click the button below to send us an email. We will respond to your inquiry within 48 hours!',
   btn: 'Send us an email',
   email: 'test@test.com',
 };

@@ -61,23 +61,31 @@
 }
 
 /* Resume Style */
-.cta-btn--resume {
-  color: $white-color;
-  border: 2px solid $white-color;
+// .cta-btn--resume {
+//   color: $white-color;
+//   border: 2px solid $white-color;
 
-  &::after {
-    background: $white-color;
-  }
+//   &::after {
+//     background: $white-color;
+//   }
 
-  &:hover {
-    color: $secondary-color;
-    text-decoration: none;
+//   &:hover {
+//     color: $secondary-color;
+//     text-decoration: none;
 
-    &::after {
-      width: 100%;
-    }
-  }
+//     &::after {
+//       width: 100%;
+//     }
+//   }
+// }
+
+.contact-form button {
+  display: inline-block;
+  padding: 15px;
+  width: 25%;
 }
+
+
 
 /* Arrow Button */
 .up i {
