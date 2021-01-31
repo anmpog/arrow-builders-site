@@ -1,0 +1,140 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  font-size: inherit;
+  border-radius: 5px;
+}
+
+.form-control {
+  width: 80%;
+  margin: 0 auto 1rem auto;
+  font-size: 16px;
+  height: auto;
+  padding: 25px;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+.form-container h1 {
+  margin-bottom: 4rem;
+}
+
+.form-control label {
+  float: left;
+}
+
+div .feedback {
+  align-self: flex-end;
+  float: right;
+}
+
+.form-control input {
+  width: 100%;
+}
+
+.text-xs {
+  font-size: 1rem;
+  display: inline-block;
+  float: left;
+  margin: 5px auto;
+}
+
+.align-right {
+  float: right;
+}
+
+input[type=text],
+input[type=tel],
+input[type=email],
+textarea,
+select {
+  width: 100%;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+input[type=text]:focus,
+input[type=tel]:focus,
+input[type=email]:focus,
+textarea:focus,
+select:focus {
+  transform: scale(1.05);
+}
+
+.form-control select:hover {
+  cursor: pointer;
+}
+
+.button-container {
+  width: 80%;
+  margin: 4rem auto 0 auto;
+  padding: 25px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.button-container button {
+  padding: 10px;
+  width: 15rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+}
+
+.button-container button:disabled {
+  color: red;
+}
+
+
+
+.valid input[type='email'],
+.valid input[type='text'],
+.valid input[type='number'],
+.valid input[type='tel'],
+.valid textarea {
+  border-color: green;
+}
+
+.valid .feedback {
+  color: green;
+}
+
+.invalid input[type='email'],
+.invalid input[type='text'],
+.invalid input[type='number'],
+.invalid input[type='tel'] {
+  border-color: red;
+}
+
+.invalid .feedback {
+  color: red;
+}
+
+
+
+// Media Queries
+@include respond(phone) {
+  .form-container {
+    background-color: transparent;
+  }
+
+  .form-control {
+    border: none;
+    width: 100%;
+    padding: 0;
+    color: white;
+  }
+
+  .button-container {
+    display: block;
+    margin-top: 5rem;
+  }
+
+  .button-container button {
+    display: block;
+    width: 10rem;
+    border-radius: 5px;
+    margin: 0 auto 4rem auto;
+    text-transform: uppercase;
+  }
+}
