@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Tilt from 'react-tilt';
 import { Container, Row, Col } from 'react-bootstrap';
 import PortfolioContext from '../../context/context';
 import Title from '../Title/Title';
@@ -70,23 +69,9 @@ const Projects = () => {
                       aria-label='Project Link'
                       rel='noopener noreferrer'
                     >
-                      <Tilt
-                        options={{
-                          reverse: false,
-                          max: 8,
-                          perspective: 1000,
-                          scale: 1,
-                          speed: 300,
-                          transition: true,
-                          axis: null,
-                          reset: true,
-                          easing: 'cubic-bezier(.03,.98,.52,.99)',
-                        }}
-                      >
-                        <div data-tilt className='thumbnail rounded'>
-                          <ProjectImg alt={title} filename={img} />
-                        </div>
-                      </Tilt>
+                      <div data-tilt className='thumbnail rounded'>
+                        <ProjectImg alt={title} filename={img} />
+                      </div>
                     </a>
                   </div>
                 </Col>
