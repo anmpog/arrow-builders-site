@@ -42,7 +42,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const posts = result.data.allMdx.edges;
 
   posts.forEach(({ node }, index) => {
-    console.log('Node value during site build: ', node);
     createPage({
       path: node.slug,
       component: path.resolve(`./src/components/templates/projects-page-layout.jsx`),

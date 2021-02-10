@@ -7,7 +7,6 @@ import { Link } from 'gatsby';
 const shortcodes = { Link };
 
 export default function PageTemplate({ data: { mdx } }) {
-  console.log(mdx);
   return (
     <div>
       <h1>{mdx.frontmatter.title || 'Generic Title'}</h1>
