@@ -10,10 +10,10 @@ export const headData = {
 // HERO DATA
 export const heroData = {
   title: 'We are',
-  name: 'Arrow Builders',
+  name: 'Arrow Builders.',
   subtitle: 'We are custom builders in Boulder, Colorado.',
   cta: 'See our work',
-  cta2: 'Learn a bit about us',
+  cta2: 'Learn about us',
 };
 
 // ABOUT DATA

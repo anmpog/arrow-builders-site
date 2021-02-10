@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { headData } from '../mock/data';
+import { headData } from '../static-data/data';
 import '../style/main.scss';
 
 export default () => {
