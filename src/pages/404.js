@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { headData } from '../static-data/data';
 import '../style/main.scss';
 
-export default () => {
+const FourOhFour = () => {
   const { lang } = headData;
 
   return (
@@ -31,3 +31,5 @@ export default () => {
     </>
   );
 };
+
+export default FourOhFour;

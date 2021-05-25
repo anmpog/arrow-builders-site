@@ -1,17 +1,15 @@
-const { createFilePath } = require('gatsby-source-filesystem');
 const path = require('path');
 const { node } = require('prop-types');
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === 'Mdx') {
-    const value = createFilePath({ node, getNode });
-
+    const frontmatterSlug = node.frontmatter.slug;
     createNodeField({
-      name: 'slug',
       node,
-      value: `/projects${value}`,
+      name: `slug`,
+      value: `projects${frontmatterSlug}`,
     });
   }
 };
@@ -19,15 +17,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
-  const result = await graphql(`
+  const { data } = await graphql(`
     query {
       allMdx {
         edges {
           node {
             id
-            slug
-            frontmatter {
-              title
+            fields {
+              slug
             }
           }
         }
@@ -35,17 +32,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   `);
 
-  if (result.errors) {
+  if (data.errors) {
     reporter.panicOnBuild(`🚨 ERROR: Loading 'createPages' query`);
   }
 
-  const posts = result.data.allMdx.edges;
-
-  posts.forEach(({ node }, index) => {
+  data.allMdx.edges.forEach(({ node }) => {
     createPage({
-      path: node.slug,
-      component: path.resolve(`./src/components/templates/projects-page-layout.jsx`),
-      context: { id: node.id },
+      path: node.fields.slug,
+      component: path.resolve(`./src/components/templates/project-post-template.js`),
+      context: {
+        slug: node.fields.slug,
+        id: node.id,
+      },
     });
   });
 };
