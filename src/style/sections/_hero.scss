@@ -14,15 +14,21 @@
   bottom: 0;
   right: 0;
   z-index: -1;
-
-  // If you want to set a background image on the hero section, uncomment these with yout custom image
-
-  /* background: url("/src/assets/[your-image].png");
+  background: url(gaurav-pikale-first-flatiron-unsplash.png);
   background-position: center;
-  background-size: cover; */
+  background-size: cover;
 
   @include respond(phone) {
     padding: 0rem $default-font-size;
+  }
+
+  .container {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5rem;
+  }
+
+  @include respond(phone) {
+    padding: 1rem;
   }
 
   .hero-title {

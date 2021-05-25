@@ -9,21 +9,20 @@ export const headData = {
 
 // HERO DATA
 export const heroData = {
-  title: 'We are',
   name: 'Arrow Builders',
-  subtitle: 'We are custom builders in Boulder, Colorado.',
+  subtitle: 'Custom builders in Boulder, Colorado.',
   cta: 'See our work',
-  cta2: 'Learn a bit about us',
+  cta2: 'Learn about us',
 };
 
 // ABOUT DATA
 export const aboutData = {
   img: 'profile.jpg',
   paragraphOne:
-    'We are custom home builders based in Boulder, Colorado. We have over {years}+ years experience in custom, high-end home building. Our experien ced, lightweight team allows us to do high-quality work quickly and without the overhead that bigger outfits bring along with them. We will work closely with you to see your dream build or remodel realized.',
-  paragraphTwo: '{more copy re: experience}',
-  paragraphThree: '{more copy re: values}',
-  resume: 'https://www.resumemaker.online/es.php', // if no resume, the button will not show up
+    'We are custom home builders based in Boulder, Colorado. We have over {years}+ years experience in custom, high-end home building. Our experienced, lightweight team allows us to do high-quality work quickly and without the overhead that bigger outfits bring along with them. We will work closely with you to see your dream build or remodel realized.',
+  paragraphTwo:
+    'We can assist in all aspects of a remodel or build, from planning and design to cleaning up when the project is finished. We have a network of experienced subcontractors who do work we are proud to stand behind. We are happy to work with designers or architects of your choosing.',
+  paragraphThree: 'Call or email us today to schedule an initial consultation.',
 };
 
 // PROJECTS DATA
@@ -96,38 +95,12 @@ export const projectsData = [
 // CONTACT DATA
 export const contactData = {
   cta:
-    'If you would like to work together, call us at (555)555-5555, or click the button below to send us an email. We will respond to your inquiry within 48 hours!',
+    'If you would like to work together, call us at (555)555-5555, or send us an email using the form below. We will respond to your inquiry within 48 hours!',
   btn: 'Send us an email',
   email: 'test@test.com',
 };
 
 // FOOTER DATA
 export const footerData = {
-  networks: [
-    {
-      id: nanoid(),
-      name: 'twitter',
-      url: '',
-    },
-    {
-      id: nanoid(),
-      name: 'codepen',
-      url: '',
-    },
-    {
-      id: nanoid(),
-      name: 'linkedin',
-      url: '',
-    },
-    {
-      id: nanoid(),
-      name: 'github',
-      url: '',
-    },
-  ],
-};
-
-// Github start/fork buttons
-export const githubButtons = {
-  isEnabled: false, // set to false to disable the GitHub stars/fork buttons
+  networks: [],
 };
