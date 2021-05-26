@@ -28,12 +28,19 @@ const phoneInputMask = [
   /\d/,
 ];
 
+// Function to encode form data for Netlify
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+};
+
 // Component(s)
-const CharacterCount = ({ characterLimit, currentCharCount }) => {
+function CharacterCount({ characterLimit, currentCharCount }) {
   return (
     <p className='text-xs align-right'>{characterLimit - currentCharCount} characters remaining.</p>
   );
-};
+}
 
 const InputWithLiveFeedback = ({ label, helpText, ...props }) => {
   const [field, meta] = useField(props);
@@ -101,14 +108,23 @@ const SignupForm = () => {
           preferredContact: Yup.string().required('Required'),
           characterLimit: Yup.number(),
         })}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+        onSubmit={(values, actions) => {
+          fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www.form-urlencoded' },
+            body: encode({ 'form-name': 'contact-form', ...values }),
+          })
+            .then(() => {
+              alert('Form submitted successfully.');
+              actions.resetForm();
+            })
+            .catch(() => {
+              alert('There was an error submitting the form.');
+            })
+            .finally(() => actions.setSubmitting(false));
         }}
       >
-        <Form>
+        <Form name='contact-form' data-netlify={true}>
           <InputWithLiveFeedback
             label='Your Name:'
             id='fullName'
